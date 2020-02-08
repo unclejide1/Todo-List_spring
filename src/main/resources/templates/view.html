@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Tasks</title>
+    <th:block th:include="/layout/header.html"></th:block>
+</head>
+<body>
+<div class="container">
+    <div>
+        <h2>All Tasks</h2>
+        <table class="table table-striped">
+            <tr class="navStyle">
+                <th>Id</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Status</th>
+                <th>Created At</th>
+                <th>Updated At</th>
+                <th>Completed At</th>
+                <th>Edit</th>
+            </tr>
+            <tr>
+                <td th:text="${task.id}"></td>
+                <td th:text="${task.title}">Title</td>
+                <td th:text="${task.description}">Title</td>
+                <td th:text="${task.status}">Status</td>
+                <td th:text="${task.createAt}">Time</td>
+                <td th:text="${task.updatedAt}">Time</td>
+                <td th:text="${task.completedAt}">Time</td>
+
+                <td><a th:href="${'/tasks/edit/'+task.id}" class="btn btn-primary">Edit</a></td>
+
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>

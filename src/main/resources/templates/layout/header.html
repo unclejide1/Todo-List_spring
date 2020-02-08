@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head lang="eng">
+
+    <meta http-equiv="content-type" content="text/html" charset="UTF-8"/>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico"/>
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="../static/css/bootstrap.css" rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
+    <link href="../static/css/styles.css" rel="stylesheet" th:href="@{/css/styles.css}"/>
+
+</head>
+<body>
+        <header class="navStyle">
+            <nav class=" navbar bg-dark navbar-light navStyle mx-auto" >
+                <div class="nav--head nav-div navStyle navbar navbar-expand-lg  ">
+                    <div class="d-flex flex-row navStyle justify-content-center">
+                        <div>
+                            <a class="navbar-brand" href="#" th:href="@{/}">Home</a>
+                        </div>
+                        <div >
+                            <ul class="navbar-nav ml-auto">
+                                <li class="navbar-item">
+                                    <a th:href="@{/tasks}" class="nav-link nav--item">Tasks</a>
+                                </li>
+                                <li class="navbar-item">
+                                    <a th:href="@{/tasks/create}" class="nav-link nav--item">Create Tasks</a>
+                                </li>
+                                <li class="navbar-item">
+                                    <a th:href="@{/tasks/add}"  class="nav-link nav--item">Add Tasks</a>
+                                </li>
+                                <li class="navbar-item">
+                                    <a href="#" class="nav-link nav--item">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+<!--        </div>-->
+    </header>
+    <div class="container ">
+        <div class="row mt-4 mx-auto align-items-center ">
+            <div class="col text-center align-items-center">
+                <h2 class="text-center ">Todo List</h2>
+            </div>
+            <div class="col text-center  h-25">
+                <img src="../../static/images/todoList.jpg" height="50%" width="50%" class="img-fluid mx-auto"
+                     th:src="@{/images/todoList.jpg}" alt="header-img"/>
+            </div>
+        </div>
+
+    </div>
+<!--</div>-->
+</body>
+</html>
