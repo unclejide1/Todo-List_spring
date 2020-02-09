@@ -24,16 +24,19 @@
                         <div >
                             <ul class="navbar-nav ml-auto">
                                 <li class="navbar-item">
-                                    <a th:href="@{/tasks}" class="nav-link nav--item">Tasks</a>
+                                    <a th:href="@{/tasks}" class="nav-link nav--item">Manage Tasks</a>
                                 </li>
                                 <li class="navbar-item">
-                                    <a th:href="@{/tasks/create}" class="nav-link nav--item">Create Tasks</a>
+                                    <a th:href="@{/tasks/create}" class="nav-link nav--item">Create</a>
                                 </li>
                                 <li class="navbar-item">
-                                    <a th:href="@{/tasks/add}"  class="nav-link nav--item">Add Tasks</a>
+                                    <a th:href="@{/tasks/pending}"  class="nav-link nav--item">Pending</a>
                                 </li>
                                 <li class="navbar-item">
-                                    <a href="#" class="nav-link nav--item">Contact</a>
+                                    <a th:href="@{/tasks/in-progress}"  class="nav-link nav--item">in-progress</a>
+                                </li>
+                                <li class="navbar-item">
+                                    <a th:href="@{/tasks/completed}"  class="nav-link nav--item">Completed</a>
                                 </li>
                             </ul>
                         </div>

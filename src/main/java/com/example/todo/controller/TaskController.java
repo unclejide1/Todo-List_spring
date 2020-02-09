@@ -50,21 +50,15 @@ public class TaskController {
         model.addAttribute("task", createdTask);
         return "view";
     }
-//
-//    @GetMapping
-//    @RequestMapping("/Status/{status}")
-//    public MyResponse<List<Task>> findByStatus(@PathVariable String status, HttpServletResponse response){
-//        List<Task> taskFoundByStatus = taskService.findByStatus(status);
-//        HttpStatus statusCode = HttpStatus.CREATED;
-//        String message = "All " + status + " tasks has been retrieved successfully";
-//        if(taskFoundByStatus.isEmpty()){
-//            statusCode = HttpStatus.BAD_REQUEST;
-//            message = status + " task does not exist";
-//        }
-//        response.setStatus(statusCode.value());
-//        return  new MyResponse<>(statusCode, message, taskFoundByStatus);
-//    }
-//
+
+
+    @RequestMapping(value = "/tasks/{status}", method = RequestMethod.GET)
+    public String findByStatus(Model model, @PathVariable String status){
+        List<Task> taskFoundByStatus = taskService.findByStatus(status);
+        model.addAttribute("tasks", taskFoundByStatus);
+        return "viewTaskByStatus";
+    }
+
 @RequestMapping(value="/tasks/edit/{id}", method = RequestMethod.PUT)
 public String updateTask(@RequestBody Task task, @PathVariable Long id ){
     taskService.updateTask(task, id);

@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8"/>
-    <title>Todo List Spring App</title>
+    <title>Tasks</title>
     <th:block th:include="/layout/header.html"></th:block>
 </head>
 <body>
 <div class="container">
-<div class="mt-5">
-    <h2>Todo's</h2>
     <div th:if="${not #lists.isEmpty(tasks)}">
+        <h2>All Tasks</h2>
         <table class="table table-striped">
             <tr class="navStyle">
                 <th>Id</th>
                 <th>Title</th>
                 <th>Description</th>
                 <th>Status</th>
+                <th>View</th>
+                <th>Delete</th>
 
             </tr>
             <tr th:each="task: ${tasks}">
@@ -23,10 +23,11 @@
                 <td th:text="${task.title}">Title</td>
                 <td th:text="${task.description}">Title</td>
                 <td th:text="${task.status}">Status</td>
+                <td><a th:href="${'/tasks/view/'+task.id}" class="btn btn-secondary">View</a></td>
+                <td><a th:href="${'/tasks/delete/'+task.id}" class="btn btn-danger">Delete</a></td>
             </tr>
         </table>
     </div>
-</div>
 </div>
 </body>
 </html>
