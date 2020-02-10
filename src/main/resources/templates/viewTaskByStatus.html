@@ -18,8 +18,8 @@
                 <th>Delete</th>
 
             </tr>
-            <tr th:each="task: ${tasks}">
-                <td th:text="${task.id}"></td>
+            <tr th:each="task, Iterator: ${tasks}">
+                <td th:text="${Iterator.count}"></td>
                 <td th:text="${task.title}">Title</td>
                 <td th:text="${task.description}">Title</td>
                 <td th:text="${task.status}">Status</td>

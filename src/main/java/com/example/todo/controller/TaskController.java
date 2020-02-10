@@ -24,7 +24,7 @@ public class TaskController {
 
     @RequestMapping(path ="tasks", method = RequestMethod.POST)
     public String saveTask(Task task){
-        Task t = taskService.createTask(task);
+        Task savedTask = taskService.createTask(task);
         return "redirect:/";
     }
 
@@ -39,15 +39,15 @@ public class TaskController {
 
     @RequestMapping(value = "/tasks/edit/{id}", method = RequestMethod.GET)
     public String editTask(Model model, @PathVariable(value = "id") Long id ){
-        Task createdTask = taskService.getATask(id);
-        model.addAttribute("task", createdTask);
+        Task taskToEdit = taskService.getATask(id);
+        model.addAttribute("task", taskToEdit);
         return "edit";
     }
 
     @RequestMapping(value = "/tasks/view/{id}", method = RequestMethod.GET)
     public String viewTask(Model model, @PathVariable(value = "id") Long id ){
-        Task createdTask = taskService.getATask(id);
-        model.addAttribute("task", createdTask);
+        Task foundTask = taskService.getATask(id);
+        model.addAttribute("task", foundTask);
         return "view";
     }
 
