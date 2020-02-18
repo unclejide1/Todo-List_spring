@@ -38,6 +38,11 @@
                                 <li class="navbar-item">
                                     <a th:href="@{/tasks/completed}"  class="nav-link nav--item">Completed</a>
                                 </li>
+                                <li class="navbar-item">
+                                    <form th:action="@{/logout}" method="post" class="nav-link nav--item ">
+                                        <button class="btn btn-primary" type="submit">Logout</button>
+                                    </form>
+                                </li>
                             </ul>
                         </div>
                     </div>
