@@ -5,6 +5,7 @@ import com.example.todo.model.User;
 import com.example.todo.services.TaskService;
 import com.example.todo.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +17,7 @@ import java.util.List;
 public class HomeController {
 
     private TaskService taskService;
+
 
 
     private UserService userService;
@@ -44,4 +46,6 @@ public class HomeController {
         User savedUser = userService.createUser(user);
         return "redirect:/";
     }
+
+
 }
