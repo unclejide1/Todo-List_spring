@@ -32,10 +32,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+
         http
                 .authorizeRequests()
                 //set the home page to be accessible if you are logged it or not
-                .antMatchers("/signup","/css/**", "/images/**", "/js/**").permitAll()
+                .antMatchers("/signup","/healthcheck","/css/**", "/images/**", "/js/**").permitAll()
                 //authenticate any other request
                 .anyRequest().authenticated()
                 .and()
